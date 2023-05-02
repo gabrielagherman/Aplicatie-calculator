@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/mycalcwebapp';
+const apiUrl = 'http://3.75.170.218:8080/mycalcwebapp';
 
 function login(username, password) {
     let credentials = 'Basic ' + btoa(username + ':' + password);
