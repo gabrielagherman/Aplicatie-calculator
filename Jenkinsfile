@@ -24,7 +24,7 @@ pipeline {
   stage('Docker Build and Tag') {
            steps { 
                 sh 'docker build -t calculator:latest .' 
-                sh 'docker tag calculator_v1 gabrielagherman/calculator:latest'
+                sh 'docker tag calculator gabrielagherman/calculator:latest'
                
           }
         }
