@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/mycalcwebapp';
+const apiUrl = 'http://3.75.170.218:8080/mycalcwebapp';
 
 function calc(first, second, op) {
     let data = {first: first, second: second, op: op};
