@@ -39,14 +39,14 @@ pipeline {
           }
         }
      
-       stage('Run Docker container on Jenkins Agent') {
+      // stage('Run Docker container on Jenkins Agent') {
              
-             steps 
+          //   steps 
 			{
-             sh "docker run -d -p 8003:8080 gabrielagherman/calculator"
+          //   sh "docker run -d -p 8003:8080 gabrielagherman/calculator"
  
-            }
-         }
+           // }
+        // }
  
 	 stage("Git Checkout"){
 		 steps{
