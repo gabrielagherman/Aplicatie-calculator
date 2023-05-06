@@ -75,8 +75,7 @@ pipeline {
 	// {
 	//	 steps{
 	//		sh 'cd /etc/ansible'
-	//		sh 'pwd'
-	//		sh 'chmod aws key' 
+	//		sh 'pwd' 
 	//		sh 'ansible-playbook ./calculator-servlet-example/playbook.yaml -i ./calculator-servlet-example/inventory --key-file ./calculator-servlet-example/aws-key.pem'
 	//	 }
 	//}
