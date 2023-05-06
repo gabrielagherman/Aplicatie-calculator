@@ -23,7 +23,8 @@ pipeline {
 
   stage('Docker Build and Tag') {
            steps { 
-                sh 'docker build -t calculator:latest .' 
+	      //sh ' docker socket'              
+		sh 'docker build -t calculator:latest .' 
                 sh 'docker tag calculator gabrielagherman/calculator:latest'
                
           }
@@ -60,6 +61,7 @@ pipeline {
 		 steps{
 			sh 'cd /etc/ansible'
 			sh 'pwd'
+			sh 'chmod aws key' 
 			sh 'ansible-playbook ./calculator-servlet-example/playbook.yaml -i ./calculator-servlet-example/inventory --key-file ./calculator-servlet-example/aws-key.pem'
 		 }
 	 }
