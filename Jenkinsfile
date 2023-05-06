@@ -58,30 +58,11 @@ pipeline {
 	 stage ("Run ansible playbook on remote hosts")
 	 {
 		 steps{
-			//sh 'cd /var/lib/jenkins/workspace/auto-deploy/aplicatie-de'
 			sh 'cd /etc/ansible'
 			sh 'pwd'
-			//ansiblePlaybook (credentialsId: 'credentialeptmasina', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/auto-deploy/application-deployment/inventory', playbook: '/var/lib/jenkins/workspace/auto-deploy/application-deployment/playbook.yaml')
-		 	//ansiblePlaybook credentialsId: 'credentialeptmasina', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/var/lib/jenkins/workspace/auto-deploy/application-deployment/inventory', playbook: '/var/lib/jenkins/workspace/auto-deploy/application-deployment/playbook.yaml'
 			sh 'ansible-playbook ./calculator-servlet-example/playbook.yaml -i ./calculator-servlet-example/inventory --key-file ./calculator-servlet-example/aws-key.pem'
-			 //ansiblePlaybook credentialsId: 'credentialeptmasina', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/inventory', playbook: '/etc/ansible/playbooktest.yaml'
 		 }
 	 }
-	 
-	 
-	 
- // stage('Run Docker container on remote hosts') {
-             
-   //         steps {
-		//withAWS(credentials: 'credentiale-masina', region: 'eu-central-1'){
-		//sshagent(['credentials']) {
-		   // sh "ssh -tt ubuntu@3.71.176.233" 
-	//	    sh "ssh ubuntu@3.71.176.233 docker run -d -p 8003:8080 gabrielagherman/samplewebapp"
-		   
-		   // sh "docker run -d -p 8003:8080 gabrielagherman/samplewebapp"
-		//}
-            //}
-        
-   // }
+
 	}
 }
