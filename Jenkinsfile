@@ -56,6 +56,21 @@ pipeline {
 	//	 	 sh 'pwd'
 	//	 }
 	 //}
+	 
+	 
+	 stage("Git Checkout"){
+	  steps{
+	    script {
+	      if (!test("-d", "calculator-servlet-example")) {
+		sh 'git clone https://github.com/gabrielagherman/calculator-servlet-example.git'
+	      } else {
+		echo "Repository already cloned"
+	      }
+	    }
+	  }
+	}
+
+	 
 	 stage ("Run ansible playbook on remote hosts")
 	 {
 		 steps{
