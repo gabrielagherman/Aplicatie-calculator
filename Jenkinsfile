@@ -59,17 +59,18 @@ pipeline {
 	 //}
 	 
 	 
-	 stage("Git Checkout"){
-	  steps{
-	    script {
-	      if (!test("-d", "Aplicatie-calculator")) {
-		sh 'git clone https://github.com/gabrielagherman/Aplicatie-calculator.git'
-	      } else {
-		echo "Repository already cloned"
-	      }
-	    }
-	  }
-	}
+	stage("Git Checkout") {
+ 	 steps {
+   		script {
+    	  		def directory = "Aplicatie-calculator"
+      			if (!fileExists(directory)) {
+       		 		sh 'git clone https://github.com/gabrielagherman/Aplicatie-calculator.git'
+    	  		} else {
+				echo "Repository already cloned"
+      }
+    }
+  }
+}
 
 	 
 	// stage ("Run ansible playbook on remote hosts")
