@@ -88,7 +88,7 @@ pipeline {
 	    script {
 	      sh 'cd /etc/ansible'
 	      sh 'pwd'
-	      sh 'chmod 400 calculator-servlet-example/aws-key.pem'
+	      sh 'chmod 400 Aplicatie-calculator/aws-key.pem'
 	      def playbook_status = sh(returnStatus: true, script: 'ansible-playbook ./Aplicatie-calculator/playbook.yaml -i ./Aplicatie-calculator/inventory --key-file ./Aplicatie-calculator/aws-key.pem')
 	      if (playbook_status == 0) {
 		echo "Playbook executed successfully"
