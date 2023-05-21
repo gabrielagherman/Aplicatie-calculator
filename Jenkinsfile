@@ -25,8 +25,8 @@ pipeline {
            steps { 
 	      //sh ' docker socket'              
 	//sh 'sudo chmod 777 /var/run/docker.sock'
-		sh 'docker build -t calculator:latest .' 
-                sh 'docker tag calculator gabrielagherman/calculator:latest'
+		sh 'docker build -t webapp:latest .' 
+                sh 'docker tag calculator gabrielagherman/webapp:latest'
                
           }
         }
@@ -35,7 +35,7 @@ pipeline {
           
             steps {
         withDockerRegistry([ credentialsId: "docker-cred", url: "" ]) {
-          sh  'docker push gabrielagherman/calculator:latest'
+          sh  'docker push gabrielagherman/webapp:latest'
         }
                   
           }
