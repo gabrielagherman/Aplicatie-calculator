@@ -24,7 +24,7 @@ pipeline {
   stage('Docker Build and Tag') {
            steps { 
 	      //sh ' docker socket'              
-		sh 'echo gabi1234 | sudo -S chmod 777 /var/run/docker.sock'
+		sh 'echo 'gabi1234' | sudo -S chmod 777 /var/run/docker.sock'
 		sh 'docker build -t calculator:latest .' 
                 sh 'docker tag calculator gabrielagherman/calculator:latest'
                
@@ -62,8 +62,8 @@ pipeline {
 	 stage("Git Checkout"){
 	  steps{
 	    script {
-	      if (!test("-d", "calculator-servlet-example")) {
-		sh 'git clone https://github.com/gabrielagherman/calculator-servlet-example.git'
+	      if (!test("-d", "Aplicatie-calculator")) {
+		sh 'git clone https://github.com/gabrielagherman/Aplicatie-calculator.git'
 	      } else {
 		echo "Repository already cloned"
 	      }
@@ -88,7 +88,7 @@ pipeline {
 	      sh 'cd /etc/ansible'
 	      sh 'pwd'
 	      sh 'chmod 400 calculator-servlet-example/aws-key.pem'
-	      def playbook_status = sh(returnStatus: true, script: 'ansible-playbook ./calculator-servlet-example/playbook.yaml -i ./calculator-servlet-example/inventory --key-file ./calculator-servlet-example/aws-key.pem')
+	      def playbook_status = sh(returnStatus: true, script: 'ansible-playbook ./Aplicatie-calculator/playbook.yaml -i ./Aplicatie-calculator/inventory --key-file ./Aplicatie-calculator/aws-key.pem')
 	      if (playbook_status == 0) {
 		echo "Playbook executed successfully"
 	      } else {
