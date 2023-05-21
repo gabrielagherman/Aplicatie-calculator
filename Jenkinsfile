@@ -24,7 +24,7 @@ pipeline {
   stage('Docker Build and Tag') {
            steps { 
 	      //sh ' docker socket'              
-		sh 'chmod 777 /var/run/docker.sock'
+		sh 'sudo chmod 777 /var/run/docker.sock'
 		sh 'docker build -t calculator:latest .' 
                 sh 'docker tag calculator gabrielagherman/calculator:latest'
                
