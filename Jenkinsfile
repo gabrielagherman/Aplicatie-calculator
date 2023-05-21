@@ -9,7 +9,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'main', url: 'https://github.com/gabrielagherman/calculator-servlet-example.git'
+                git branch: 'main', url: 'https://github.com/gabrielagherman/Aplicatie-calculator.git'
              
           }
         }
